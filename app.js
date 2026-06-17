@@ -3850,7 +3850,6 @@ const App = (() => {
         <button id="admin-logout-btn" class="btn btn--danger">🚪 Cerrar sesión admin</button>
       </div>
     `;
-    `;
 
     // --- Editor de pronósticos (override admin, sin plazo) ---
     (function setupOverrideEditor() {
@@ -3866,7 +3865,7 @@ const App = (() => {
       function fillPlayers(list) {
         if (!playerSel) return;
         playerSel.innerHTML = list.map(pl =>
-          `<option value="${escapeHtml(pl.id)}">${escapeHtml(pl.name)}${pl.team ? " (" + escapeHtml(pl.team) + ")" : ""}</option>`
+          '<option value="' + escapeHtml(pl.id) + '">' + escapeHtml(pl.name) + (pl.team ? " (" + escapeHtml(pl.team) + ")" : "") + '</option>'
         ).join("");
         playerSel.dispatchEvent(new Event("change"));
       }
