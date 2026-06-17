@@ -924,7 +924,7 @@ const App = (() => {
     const hasAppsScript = CONFIG.appsScriptUrl && 
                           !CONFIG.appsScriptUrl.includes("CAMBIAR_ESTO") && 
                           !CONFIG.appsScriptUrl.includes("YOUR_") &&
-                          !CONFIG.appsScriptUrl.includes("AKfycbx1X1swWN1Gz4Whtv9apiJiElNzEsyunVc2HHCycL3oPUhHN-m5U6KS_U2oQmPfoD0Q"); // Evitar la de ejemplo
+                          !CONFIG.appsScriptUrl.includes("TU_URL_APPS_SCRIPT");
     const hasSheets = CONFIG.googleSheets && Object.values(CONFIG.googleSheets).every(url => url && !url.startsWith("URL_CSV") && !url.includes("google.com/spreadsheets/d/..."));
     return hasAppsScript || hasSheets;
   }
@@ -938,7 +938,7 @@ const App = (() => {
       if (CONFIG.appsScriptUrl && 
           !CONFIG.appsScriptUrl.includes("CAMBIAR_ESTO") && 
           !CONFIG.appsScriptUrl.includes("YOUR_") && 
-          !CONFIG.appsScriptUrl.includes("AKfycbx1X1swWN1Gz4Whtv9apiJiElNzEsyunVc2HHCycL3oPUhHN-m5U6KS_U2oQmPfoD0Q")) {
+          !CONFIG.appsScriptUrl.includes("TU_URL_APPS_SCRIPT")) {
         try {
           const resp = await fetch(CONFIG.appsScriptUrl + "?action=getData");
           const json = await resp.json();
